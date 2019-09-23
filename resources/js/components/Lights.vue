@@ -38,15 +38,15 @@ export default {
         getLights() {
 
             //getting lights from database
-            console.log("GETTING LIGHTS FROM DATABASE (WAN)");
+            console.log("(WAN) GETTING LIGHTS FROM DATABASE");
             fetch('http://155.4.151.137/smarthome0/public/api/lights')
             .then(res => res.json())
             .then(res => {
 
-                let lightsFromRouter = Object.values(res.data);
+                let lightsFromDatabase = Object.values(res.data);
 
                 //updating vue data-function for displaying state in web application
-                this.lights = lightsFromRouter;
+                this.lights = lightsFromDatabase;
 
                 for(let i = 0; i < this.lights.length; i++)
                 {
@@ -60,7 +60,7 @@ export default {
                     }
                 }
             });
-        },
+        }
     }
 }
 </script>

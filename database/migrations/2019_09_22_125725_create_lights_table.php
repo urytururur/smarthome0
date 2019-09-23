@@ -19,6 +19,10 @@ class CreateLightsTable extends Migration
             $table->integer('bri');
             $table->integer('hue');
             $table->integer('sat');
+            $table->double('x', 5, 4);
+            $table->double('y', 5, 4);
+            $table->string('effect');
+            $table->string('method');
             $table->timestamps();
         });
     }

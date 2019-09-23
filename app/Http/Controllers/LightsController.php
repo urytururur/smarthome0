@@ -37,6 +37,10 @@ class LightsController extends Controller
         $light->bri = $request->input('bri');
         $light->hue = $request->input('hue');
         $light->sat = $request->input('sat');
+        $light->x = $request->input('x');
+        $light->y = $request->input('y');
+        $light->effect = $request->input('effect');
+        $light->method = $request->input('method');
 
         if($light->save()) {
             return new LightResource($light);
